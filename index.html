@@ -65,12 +65,15 @@
         background: var(--yellow);
         margin-left: 6px;
         animation: blink 1s steps(2) infinite;
+        vertical-align: baseline;
       }
       .cursor.stopped {
         animation: none;
         background: transparent;
         width: auto;
+        height: auto;
         color: var(--yellow);
+        vertical-align: baseline;
       }
       @keyframes blink {
         50% {
@@ -118,6 +121,7 @@
         width: 100%;
         max-width: 1100px;
         margin-top: 36px;
+        text-align: center;
       }
       .impressum-toggle {
         background: rgba(108, 26, 255, 0.15);
