@@ -66,6 +66,12 @@
         margin-left: 6px;
         animation: blink 1s steps(2) infinite;
       }
+      .cursor.stopped {
+        animation: none;
+        background: transparent;
+        width: auto;
+        color: var(--yellow);
+      }
       @keyframes blink {
         50% {
           opacity: 0;
@@ -318,6 +324,10 @@
       }
       document.addEventListener("DOMContentLoaded", () => {
         setTimeout(typeMainText, 500);
+        setTimeout(() => {
+          cursorEl.classList.add("stopped");
+          cursorEl.textContent = "<<<";
+        }, 5000);
       });
     </script>
   </body>
