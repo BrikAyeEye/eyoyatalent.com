@@ -1,2 +1,324 @@
-﻿<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>eyoya ou</title><link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet"><style>:root{--bg:#0a0a0f;--purple:#6c1aff;--yellow:#ffdd33;--text:#f4f4f4;--muted:rgba(244,244,244,0.28);--mono:"Fira Code",monospace}*{box-sizing:border-box}html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:var(--mono)}body{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}main{max-width:980px;width:100%;text-align:center;padding:28px}h1{margin:0;color:var(--purple);font-size:2.5rem}.row{display:flex;align-items:center;gap:16px;justify-content:center;margin-top:12px}#typed-area{font-size:1.1rem;color:var(--yellow);min-height:2em}.cursor{display:inline-block;width:10px;height:20px;background:var(--yellow);margin-left:6px;animation:blink 1s steps(2) infinite}@keyframes blink{50%{opacity:0}}.content-section{margin:24px 0;text-align:left}.section-header{color:var(--yellow);font-size:1.2rem;font-weight:600;margin-bottom:8px;border-bottom:1px solid rgba(255,221,51,0.3);padding-bottom:6px}.section-text{color:var(--yellow);font-size:0.95rem;line-height:1.4;margin:0}.section-complete .section-header{color:var(--text);transition:color 0.4s ease}.section-complete .section-text{color:var(--text);transition:color 0.4s ease}.fade-in{opacity:0;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease}.visible{opacity:1;transform:none}footer{width:100%;max-width:1100px;margin-top:36px;background:rgba(255,255,255,0.02);color:var(--muted);font-size:0.78rem;padding:14px;border-radius:6px;line-height:1.35;max-height:20vh;overflow:auto}footer p{margin:6px 0}footer strong{color:var(--muted)}@media (max-width:700px){h1{font-size:2rem}#typed-area{font-size:1rem}.section-header{font-size:1.1rem}.section-text{font-size:0.9rem}}</style></head><body><main><h1>eyoya ou</h1><div class="row"><div id="typed-area"></div><span class="cursor" id="cursor"></span></div><div class="fade-in" id="after-typed"><div id="sections"></div></div></main><footer><p><strong>Company name:</strong> eyoya ou</p><p><strong>Registered office:</strong> Ahtri tn 12, 10151 Tallinn, Estonia</p><p><strong>Tax / VAT ID:</strong> EE102419748</p><p><strong>Contact email:</strong> ben@eyoyatalent.com</p><p><strong>Phone:</strong> +30 694 932 8168</p><p><strong>Business activities:</strong> Headhunters, interim recruiters and LLM web services for talent acquisition and related consulting.</p><p><strong>No CV uploads / No tracking:</strong> This website intentionally does not accept CV uploads, does not use analytics or tracking cookies, and does not set third-party trackers. Payment processing (if any) is handled by Stripe  eyoya ou does not store full card data.</p><p><strong>Legal & Governing law:</strong> This site is operated by eyoya ou. Governing law and jurisdiction: Estonia.</p><p><em>Privacy: inquiry emails are retained for up to 2 years; accounting records retained per Estonian tax law. To exercise GDPR rights contact ben@eyoyatalent.com.</em></p></footer><script>const mainText=">>> headhunters. interim recruiters. llm ambassadors.";const sections=[{header:"We work as headhunters, interim recruiters, and LLM ambassadors.",text:"We connect. We build LLM apps. We are talkers and doers."},{header:"Start-ups, scale-ups, and a few of the big old giants.",text:"Orgs roll different. So do humans. We find the right way in process and communication."},{header:"Drop us a line.",text:"If it is about talent, AI, or both  we will listen. Then we will make it happen."}];const typedEl=document.getElementById("typed-area");const cursorEl=document.getElementById("cursor");const sectionsEl=document.getElementById("sections");const after=document.getElementById("after-typed");let i=0;let currentSection=0;const baseSpeed=60;function getTypingSpeed(char){if(char===" "||char==="."||char===","||char==="!")return baseSpeed*1.5;if("aeiou".includes(char.toLowerCase()))return baseSpeed*0.8;return baseSpeed+Math.random()*40;}function typeMainText(){if(i<=mainText.length){const showCursorChar=(i%2===0)?"":"";typedEl.textContent=mainText.slice(0,i)+showCursorChar;i++;const speed=getTypingSpeed(mainText[i-1]);setTimeout(typeMainText,speed);}else{typedEl.textContent=mainText;cursorEl.style.display="none";setTimeout(()=>{after.classList.add("visible");setTimeout(typeSections,800);},1000);}}function typeSections(){if(currentSection<sections.length){const section=document.createElement("div");section.className="content-section";const header=document.createElement("h2");header.className="section-header";const text=document.createElement("p");text.className="section-text";section.appendChild(header);section.appendChild(text);sectionsEl.appendChild(section);typeHeader(header,sections[currentSection].header,()=>{typeText(text,sections[currentSection].text,()=>{section.classList.add("section-complete");currentSection++;setTimeout(typeSections,1200);});});}}function typeHeader(headerEl,headerText,callback){let j=0;function typeHeaderChar(){if(j<=headerText.length){const showCursorChar=(j%2===0)?"":"";headerEl.textContent=headerText.slice(0,j)+showCursorChar;j++;const speed=getTypingSpeed(headerText[j-1]);setTimeout(typeHeaderChar,speed);}else{headerEl.textContent=headerText;setTimeout(callback,300);}}typeHeaderChar();}function typeText(textEl,textContent,callback){let k=0;function typeTextChar(){if(k<=textContent.length){const showCursorChar=(k%2===0)?"":"";textEl.textContent=textContent.slice(0,k)+showCursorChar;k++;const speed=getTypingSpeed(textContent[k-1]);setTimeout(typeTextChar,speed);}else{textEl.textContent=textContent;setTimeout(callback,200);}}typeTextChar();}document.addEventListener("DOMContentLoaded",()=>{setTimeout(typeMainText,500);});</script></body></html>
-
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>eyoya ou</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0a0a0f;
+        --purple: #6c1aff;
+        --yellow: #ffdd33;
+        --text: #f4f4f4;
+        --muted: rgba(244, 244, 244, 0.28);
+        --mono: "Fira Code", monospace;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--mono);
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      main {
+        max-width: 980px;
+        width: 100%;
+        text-align: center;
+        padding: 28px;
+      }
+      h1 {
+        margin: 0;
+        color: var(--purple);
+        font-size: 2.5rem;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        justify-content: center;
+        margin-top: 12px;
+      }
+      #typed-area {
+        font-size: 1.1rem;
+        color: var(--yellow);
+        min-height: 2em;
+      }
+      .cursor {
+        display: inline-block;
+        width: 10px;
+        height: 20px;
+        background: var(--yellow);
+        margin-left: 6px;
+        animation: blink 1s steps(2) infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      .content-section {
+        margin: 24px 0;
+        text-align: left;
+      }
+      .section-header {
+        color: var(--yellow);
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        border-bottom: 1px solid rgba(255, 221, 51, 0.3);
+        padding-bottom: 6px;
+      }
+      .section-text {
+        color: var(--yellow);
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin: 0;
+      }
+      .section-complete .section-header {
+        color: var(--text);
+        transition: color 0.4s ease;
+      }
+      .section-complete .section-text {
+        color: var(--text);
+        transition: color 0.4s ease;
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(6px);
+        transition:
+          opacity 0.45s ease,
+          transform 0.45s ease;
+      }
+      .visible {
+        opacity: 1;
+        transform: none;
+      }
+      .impressum-container {
+        width: 100%;
+        max-width: 1100px;
+        margin-top: 36px;
+      }
+      .impressum-toggle {
+        background: rgba(108, 26, 255, 0.15);
+        border: 1px solid var(--purple);
+        color: var(--purple);
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .impressum-toggle:hover {
+        background: rgba(108, 26, 255, 0.25);
+        border-color: var(--yellow);
+        color: var(--yellow);
+      }
+      footer {
+        width: 100%;
+        max-width: 1100px;
+        margin-top: 12px;
+        background: rgba(255, 255, 255, 0.02);
+        color: var(--muted);
+        font-size: 0.78rem;
+        padding: 14px;
+        border-radius: 6px;
+        line-height: 1.35;
+        max-height: 20vh;
+        overflow: auto;
+        display: none;
+      }
+      footer.visible {
+        display: block;
+      }
+      footer p {
+        margin: 6px 0;
+      }
+      footer strong {
+        color: var(--muted);
+      }
+      @media (max-width: 700px) {
+        h1 {
+          font-size: 2rem;
+        }
+        #typed-area {
+          font-size: 1rem;
+        }
+        .section-header {
+          font-size: 1.1rem;
+        }
+        .section-text {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>eyoya ou</h1>
+      <div class="row">
+        <div id="typed-area"></div>
+        <span class="cursor" id="cursor"></span>
+      </div>
+      <div class="fade-in" id="after-typed"><div id="sections"></div></div>
+    </main>
+    <div class="impressum-container">
+      <button class="impressum-toggle" onclick="toggleImpressum()">
+        View Impressum
+      </button>
+      <footer id="impressum">
+        <p><strong>Company name:</strong> eyoya ou</p>
+        <p>
+          <strong>Registered office:</strong> Ahtri tn 12, 10151 Tallinn,
+          Estonia
+        </p>
+        <p><strong>Tax / VAT ID:</strong> EE102419748</p>
+        <p><strong>Contact email:</strong> ben@eyoyatalent.com</p>
+        <p><strong>Phone:</strong> +30 694 932 8168</p>
+        <p>
+          <strong>Business activities:</strong> Headhunters, interim recruiters
+          and LLM web services for talent acquisition and related consulting.
+        </p>
+        <p>
+          <strong>No CV uploads / No tracking:</strong> This website
+          intentionally does not accept CV uploads, does not use analytics or
+          tracking cookies, and does not set third-party trackers. Payment
+          processing (if any) is handled by Stripe eyoya ou does not store full
+          card data.
+        </p>
+        <p>
+          <strong>Legal & Governing law:</strong> This site is operated by eyoya
+          ou. Governing law and jurisdiction: Estonia.
+        </p>
+        <p>
+          <em
+            >Privacy: inquiry emails are retained for up to 2 years; accounting
+            records retained per Estonian tax law. To exercise GDPR rights
+            contact ben@eyoyatalent.com.</em
+          >
+        </p>
+      </footer>
+    </div>
+    <script>
+      const mainText = ">>> headhunters. interim recruiters. llm ambassadors.";
+      const sections = [
+        {
+          header:
+            "We work as headhunters, interim recruiters, and LLM ambassadors.",
+          text: "We connect. We build LLM apps. We are talkers and doers.",
+        },
+        {
+          header: "Start-ups, scale-ups, and a few of the big old giants.",
+          text: "Orgs roll different. So do humans. We find the right way in process and communication.",
+        },
+        {
+          header: "Drop us a line.",
+          text: "If it is about talent, AI, or both  we will listen. Then we will make it happen.",
+        },
+      ];
+      const typedEl = document.getElementById("typed-area");
+      const cursorEl = document.getElementById("cursor");
+      const sectionsEl = document.getElementById("sections");
+      const after = document.getElementById("after-typed");
+      let i = 0;
+      let currentSection = 0;
+      const baseSpeed = 60;
+      function getTypingSpeed(char) {
+        if (char === " " || char === "." || char === "," || char === "!")
+          return baseSpeed * 1.5;
+        if ("aeiou".includes(char.toLowerCase())) return baseSpeed * 0.8;
+        return baseSpeed + Math.random() * 40;
+      }
+      function typeMainText() {
+        if (i <= mainText.length) {
+          const showCursorChar = i % 2 === 0 ? "" : "";
+          typedEl.textContent = mainText.slice(0, i) + showCursorChar;
+          i++;
+          const speed = getTypingSpeed(mainText[i - 1]);
+          setTimeout(typeMainText, speed);
+        } else {
+          typedEl.textContent = mainText;
+          cursorEl.style.display = "none";
+          setTimeout(() => {
+            after.classList.add("visible");
+            setTimeout(typeSections, 800);
+          }, 1000);
+        }
+      }
+      function typeSections() {
+        if (currentSection < sections.length) {
+          const section = document.createElement("div");
+          section.className = "content-section";
+          const header = document.createElement("h2");
+          header.className = "section-header";
+          const text = document.createElement("p");
+          text.className = "section-text";
+          section.appendChild(header);
+          section.appendChild(text);
+          sectionsEl.appendChild(section);
+          typeHeader(header, sections[currentSection].header, () => {
+            typeText(text, sections[currentSection].text, () => {
+              section.classList.add("section-complete");
+              currentSection++;
+              setTimeout(typeSections, 1200);
+            });
+          });
+        }
+      }
+      function typeHeader(headerEl, headerText, callback) {
+        let j = 0;
+        function typeHeaderChar() {
+          if (j <= headerText.length) {
+            const showCursorChar = j % 2 === 0 ? "" : "";
+            headerEl.textContent = headerText.slice(0, j) + showCursorChar;
+            j++;
+            const speed = getTypingSpeed(headerText[j - 1]);
+            setTimeout(typeHeaderChar, speed);
+          } else {
+            headerEl.textContent = headerText;
+            setTimeout(callback, 300);
+          }
+        }
+        typeHeaderChar();
+      }
+      function typeText(textEl, textContent, callback) {
+        let k = 0;
+        function typeTextChar() {
+          if (k <= textContent.length) {
+            const showCursorChar = k % 2 === 0 ? "" : "";
+            textEl.textContent = textContent.slice(0, k) + showCursorChar;
+            k++;
+            const speed = getTypingSpeed(textContent[k - 1]);
+            setTimeout(typeTextChar, speed);
+          } else {
+            textEl.textContent = textContent;
+            setTimeout(callback, 200);
+          }
+        }
+        typeTextChar();
+      }
+      function toggleImpressum() {
+        const impressum = document.getElementById("impressum");
+        impressum.classList.toggle("visible");
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(typeMainText, 500);
+      });
+    </script>
+  </body>
+</html>
